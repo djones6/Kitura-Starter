@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "Cryptor",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueCryptor.git",
+        "state": {
+          "branch": null,
+          "revision": "7865ad2f864633eb945dc77c43213fb34688bb3e",
+          "version": "1.0.5"
+        }
+      },
+      {
+        "package": "CryptorRSA",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueRSA.git",
+        "state": {
+          "branch": null,
+          "revision": "e70171e90f9f2880d2253d28e4162cc7606270ca",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "Socket",
         "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
         "state": {
@@ -35,6 +53,15 @@
           "branch": null,
           "revision": "6e425ee772b505f9fcffbd265e2f382501bd1305",
           "version": "6.1.0"
+        }
+      },
+      {
+        "package": "CommonCrypto",
+        "repositoryURL": "https://github.com/IBM-Swift/CommonCrypto.git",
+        "state": {
+          "branch": null,
+          "revision": "9156d238dbc4c15455b77b45e721b2bb0b995e31",
+          "version": "1.0.0"
         }
       },
       {
@@ -105,8 +132,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/KituraContracts.git",
         "state": {
           "branch": null,
-          "revision": "fca1d07d9e81cfd3d70822a6b2544bc5c9f366fd",
-          "version": "1.0.1"
+          "revision": "83e5cb37871dce2b1e4ca61821c20b2c654c0c1c",
+          "version": "1.0.2"
         }
       },
       {
@@ -128,12 +155,21 @@
         }
       },
       {
+        "package": "SwiftJWT",
+        "repositoryURL": "https://github.com/IBM-Swift/Swift-JWT.git",
+        "state": {
+          "branch": null,
+          "revision": "f5edc3d639cae79b8cb0eef9fe16eb7ad1faa5ae",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "TypeDecoder",
         "repositoryURL": "https://github.com/IBM-Swift/TypeDecoder.git",
         "state": {
           "branch": null,
-          "revision": "3a321fc0ccbd49a9e240b0c0df3b290f393960d2",
-          "version": "1.0.0"
+          "revision": "aaf636e64089baf6a710ff5e7dd5f4c8798ff940",
+          "version": "1.1.0"
         }
       }
     ]

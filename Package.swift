@@ -31,16 +31,17 @@ let package = Package(
       .package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from: "2.4.0")),
       .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", .upToNextMajor(from: "1.7.1")),
       .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "6.0.0")),
-      .package(url: "https://github.com/IBM-Swift/Health.git", .upToNextMajor(from: "1.0.0"))
+      .package(url: "https://github.com/IBM-Swift/Health.git", .upToNextMajor(from: "1.0.0")),
+      .package(url: "https://github.com/IBM-Swift/Swift-JWT.git", .upToNextMajor(from: "1.0.0"))
     ],
     targets: [
       .target(
         name: "Kitura-Starter",
-        dependencies: ["Kitura", "HeliumLogger", "Controller"]
+        dependencies: ["Kitura", "HeliumLogger", "Controller", "SwiftJWT"]
       ),
       .target(
         name: "Controller",
-        dependencies: ["Kitura", "CloudEnvironment", "Health"]
+        dependencies: ["Kitura", "CloudEnvironment", "Health", "SwiftJWT"]
       ),
       .testTarget(
         name: "ControllerTests",
