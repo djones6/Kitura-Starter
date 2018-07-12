@@ -68,7 +68,11 @@ public class Controller {
     // Basic application health check
     router.get("/health", handler: getHealthCheck)
     
-    router.get("jwt", handler: getJWT)
+    router.get("/jwt", handler: getJWT)
+
+    router.all("/", middleware: BodyParser())
+
+    router.post("/verify", handler: verifyJWT)
   }
 
   /**
@@ -86,55 +90,55 @@ public class Controller {
         let key =
             """
 -----BEGIN RSA PRIVATE KEY-----
-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
+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
 -----END RSA PRIVATE KEY-----
 
 """.data(using: .utf8)!
@@ -150,6 +154,43 @@ QCkF1i6OabEvTftiKStENKmtjxVzzbs/robphH/GLIfUGAaQlEADYGp6PAgx
             response.send(signed)
         } else {
             Log.error("Nope...")
+        }
+    }
+
+    public func verifyJWT(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
+        guard let jwtBody = request.body else {
+            return try response.status(.badRequest).send("No body\n").end()
+        }
+        guard let jwtData = jwtBody.asText else {
+            return try response.status(.badRequest).send("Body not text\n").end()
+        }
+        let key =
+        """
+-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA1TZ9oVphRAa+HoHRCxon
+oERuwQJSuzYsv9jqaY5shjRu02IhR0jg/enifARKpHVxx/VFAqdaiUYbyS4a1y/m
+XE1lDWXfsFS0BcGBYp8Dv9OinWanUofma3G27OWMaH0z1nLQR7uqFTP3f79hiCbT
++vDBmGNUiGo+npgKf8euQA/1ngxXV75JNmt5lsYlwVC3YX4peO2aSuGTUXq6bDdv
+Mo94J5yP+xgwnB/TgXELYuakMiBvJla+beZz3E0MHr0hUZwsttTvf+4NrquJC0tW
+0L4ELUHy+BelOcy0/uh7PtWBOmDRgCrZ4EDfeLhhOU0i2IO9zUjEvughtSPVWDmD
+moAImmHcf9hO31ZB+85igLGGRXP7Y2+b6g/DHFmTqKXM0EU5vaMW7vP0rjfvK9nG
+3xhqoZ1/c2cA+sJqMmpNrNYWZN7lDj+pB/w92FT5Xhy93r8qhUDSGk6Ov/2I0EkL
+D7QtOi8CgmO0x1gFdLyVqdWS9uw/vH3Sz+ctQieqXoWVRwezDVZTuQi+oZqqxnEe
+pG3fgIC7/lBQcjim/2lpilEhWpTrKEUU+nMZ0h1up92NtlQus11vn6leVPye5I6m
+6QCZbj22vh3OMq81vy/NlUZZc1H8fH7hYTUfcRkCZJa9UxTMxTRVd6sanaKF3gXU
+GAw+lzVWZopnycNmHi9YW98CAwEAAQ==
+-----END PUBLIC KEY-----
+
+""".data(using: .utf8)!
+        if try JWT.verify(jwtData, using: .rs256(key, .publicKey)) {
+            response.status(.OK).send("JWT verified\n")
+            if let jwt = try JWT.decode(jwtData) {
+                response.send(String(describing: jwt))
+                response.send("\n")
+            }
+            try response.end()
+        } else {
+            try response.status(.badRequest).send("JWT did not verify\n").end()
         }
     }
 
